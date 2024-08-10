@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://v1fiyp0l185j" path="res://scenes/start.tscn" id="9_ccrjt"]
 [ext_resource type="PackedScene" uid="uid://cn4rpl6hgiarx" path="res://scenes/exit.tscn" id="10_4f6hh"]
 [ext_resource type="Texture2D" uid="uid://b85wuldljj4ar" path="res://assets/TrojanBlock.png" id="11_dwqs0"]
-[ext_resource type="Theme" uid="uid://b5stpr4a473fy" path="res://trialText.tres" id="13_y5n5n"]
+[ext_resource type="Texture2D" uid="uid://d3weou6tw23wu" path="res://Imagenes/TrojanBlock.png" id="12_rxtdm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ho15a"]
 texture = ExtResource("11_dwqs0")
@@ -811,14 +811,18 @@ rendering_quadrant_size = 60
 format = 2
 layer_0/tile_data = PackedInt32Array(-851980, 65536, 0, -851975, 65536, 0, -851971, 65536, 0, -65539, 65536, 0, -65543, 65536, 0, -65547, 196608, 1, -65551, 196608, 1)
 
-[node name="LineEdit" type="LineEdit" parent="."]
-z_index = 325
-offset_left = -123.0
-offset_top = 72.0
-offset_right = -21.0
-offset_bottom = 103.0
-theme = ExtResource("13_y5n5n")
-text = "Anonymous"
-expand_to_text_length = true
+[node name="TrojanBlock" type="Sprite2D" parent="."]
+position = Vector2(-157.375, 68.4375)
+scale = Vector2(0.632109, 0.24018)
+texture = ExtResource("12_rxtdm")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = -289.0
+offset_top = 19.0
+offset_right = -29.0
+offset_bottom = 121.0
+text = "sfddsdffffffsdfsd
+dsfsdfdsffhf
+sdfsdfsd"
 
 [editable path="Deathzone"]
