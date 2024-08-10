@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=3 uid="uid://cwfv7xweebvi8"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_bd87r"]
+[ext_resource type="Texture2D" uid="uid://c4qkojwlgeyxq" path="res://assets/textures/player/llama_walk.png" id="3_5mwye"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnef5"]
+atlas = ExtResource("3_5mwye")
+region = Rect2(0, 0, 268, 630)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tblji"]
+atlas = ExtResource("3_5mwye")
+region = Rect2(536, 0, 268, 630)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0flc6"]
+atlas = ExtResource("3_5mwye")
+region = Rect2(0, 0, 268, 630)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av8fx"]
+atlas = ExtResource("3_5mwye")
+region = Rect2(268, 0, 268, 630)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oey8"]
+atlas = ExtResource("3_5mwye")
+region = Rect2(536, 0, 268, 630)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8mow"]
+atlas = ExtResource("3_5mwye")
+region = Rect2(804, 0, 268, 630)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vwmer"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnef5")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnef5")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tblji")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0flc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av8fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oey8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8mow")
+}],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t8wx"]
+size = Vector2(14, 23)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_bd87r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -12)
+scale = Vector2(0.104478, 0.0974206)
+sprite_frames = SubResource("SpriteFrames_vwmer")
+animation = &"fall"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_2t8wx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_bottom = 255

@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn4rpl6hgiarx"]
+
+[ext_resource type="Script" path="res://scripts/exit.gd" id="1_lxldl"]
+[ext_resource type="Texture2D" uid="uid://d2hw808q7wii6" path="res://assets/textures/bg/flota.png" id="2_xgvk4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bq7jo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xgvk4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xgvk4")
+}],
+"loop": true,
+"name": &"default2",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h20fs"]
+radius = 6.08276
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ju24"]
+size = Vector2(34, 8)
+
+[node name="Exit" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_lxldl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+scale = Vector2(0.113333, 0.108889)
+sprite_frames = SubResource("SpriteFrames_bq7jo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -14)
+shape = SubResource("CircleShape2D_h20fs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0ju24")

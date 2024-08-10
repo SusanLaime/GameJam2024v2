@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://5ghotxjrgk7d"]
+
+[ext_resource type="Script" path="res://scripts/trap.gd" id="1_qdotp"]
+[ext_resource type="Texture2D" uid="uid://lh1db7vj33in" path="res://assets/textures/Enemys/policeRunning.png" id="2_2vhej"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n80q2"]
+radius = 11.0
+
+[sub_resource type="Animation" id="Animation_hrdx1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_q5h4g"]
+resource_name = "move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(100, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vatc1"]
+_data = {
+"RESET": SubResource("Animation_hrdx1"),
+"move": SubResource("Animation_q5h4g")
+}
+
+[node name="SpikeBall" type="Node2D" groups=["traps"]]
+script = ExtResource("1_qdotp")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-10.25, -26.75)
+scale = Vector2(0.613281, 0.542969)
+texture = ExtResource("2_2vhej")
+hframes = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-10, -11)
+shape = SubResource("CircleShape2D_n80q2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vatc1")
+}
+autoplay = "move"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
