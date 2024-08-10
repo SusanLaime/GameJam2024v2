@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://b0w8gtjt3kke6" path="res://scenes/bg.tscn" id="2_2dddt"]
 [ext_resource type="PackedScene" uid="uid://cw1c5aws8wj4v" path="res://scenes/level_3.tscn" id="2_vj5hk"]
 [ext_resource type="PackedScene" uid="uid://b7mqov562l5sb" path="res://scenes/tile_map.tscn" id="3_aj0rw"]
-[ext_resource type="Texture2D" uid="uid://dwnb6pwvjo024" path="res://assets/textures/newBg/backup-1691858645-7_0001.png" id="4_coynl"]
 [ext_resource type="PackedScene" uid="uid://v1fiyp0l185j" path="res://scenes/start.tscn" id="4_svt18"]
+[ext_resource type="Texture2D" uid="uid://dag3jhqrjv0bt" path="res://assets/textures/newBg/Untitled design.png" id="4_vyumj"]
 [ext_resource type="PackedScene" uid="uid://cn4rpl6hgiarx" path="res://scenes/exit.tscn" id="5_2g6oh"]
 [ext_resource type="PackedScene" uid="uid://1sfpdcin4md7" path="res://scenes/ui_layer.tscn" id="5_4vtm7"]
 [ext_resource type="PackedScene" uid="uid://mwtkxlw36bis" path="res://scenes/deathzone.tscn" id="6_tdmbx"]
@@ -19,7 +19,7 @@ script = ExtResource("1_0ee57")
 next_level = ExtResource("2_vj5hk")
 
 [node name="BG" parent="." instance=ExtResource("2_2dddt")]
-bg_texture = ExtResource("4_coynl")
+bg_texture = ExtResource("4_vyumj")
 scroll_speed = 0
 
 [node name="UILayer" parent="." instance=ExtResource("5_4vtm7")]
@@ -62,9 +62,6 @@ position = Vector2(1375, 0)
 jump_force = 1000
 
 [node name="Traps" type="Node2D" parent="."]
-
-[node name="sullu" parent="Traps" instance=ExtResource("12_mouuh")]
-position = Vector2(135, 202)
 
 [node name="sullu2" parent="Traps" instance=ExtResource("12_mouuh")]
 position = Vector2(580, -5)

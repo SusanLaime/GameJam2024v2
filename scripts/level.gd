@@ -10,7 +10,7 @@ extends Node2D
 @onready var hud = $UILayer/HUD
 @onready var ui_layer = $UILayer
 
-var newObject = preload("res://scenes/exit.tscn")
+var newObject = preload("res://scenes/spawn_object.tscn")
 
 var player = null
 var save_position_player

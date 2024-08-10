@@ -5,6 +5,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_qobd3"]
 font = ExtResource("1_63uee")
+font_color = Color(0.0666667, 1, 1, 1)
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
@@ -26,7 +27,7 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
-text = "SALIDA DE BUS:"
+text = "TIME BEFORE LOOP:"
 label_settings = SubResource("LabelSettings_qobd3")
 horizontal_alignment = 1
 vertical_alignment = 1

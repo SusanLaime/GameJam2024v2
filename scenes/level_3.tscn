@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1sfpdcin4md7" path="res://scenes/ui_layer.tscn" id="3_kxsan"]
 [ext_resource type="PackedScene" uid="uid://b0w8gtjt3kke6" path="res://scenes/bg.tscn" id="3_x1lst"]
 [ext_resource type="PackedScene" uid="uid://cn4rpl6hgiarx" path="res://scenes/exit.tscn" id="4_0wfln"]
-[ext_resource type="Texture2D" uid="uid://43oq86ldi6dh" path="res://assets/textures/newBg/Oruro 1.png" id="4_fqfq2"]
+[ext_resource type="Texture2D" uid="uid://dag3jhqrjv0bt" path="res://assets/textures/newBg/Untitled design.png" id="4_a2yf3"]
 [ext_resource type="PackedScene" uid="uid://v1fiyp0l185j" path="res://scenes/start.tscn" id="5_20g07"]
 [ext_resource type="PackedScene" uid="uid://mwtkxlw36bis" path="res://scenes/deathzone.tscn" id="6_mhss2"]
 [ext_resource type="PackedScene" uid="uid://bfi3wl3ecmvan" path="res://scenes/jump_pad.tscn" id="9_cdh8o"]
@@ -23,7 +23,7 @@ level_time = 60
 [node name="UILayer" parent="." instance=ExtResource("3_kxsan")]
 
 [node name="BG" parent="." instance=ExtResource("3_x1lst")]
-bg_texture = ExtResource("4_fqfq2")
+bg_texture = ExtResource("4_a2yf3")
 
 [node name="Exit" parent="." instance=ExtResource("4_0wfln")]
 position = Vector2(1537, -112)

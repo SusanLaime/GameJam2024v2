@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwg48jufnb0kf"]
+
+[ext_resource type="Script" path="res://scripts/start.gd" id="1_r2pjd"]
+[ext_resource type="Texture2D" uid="uid://c65w7551d8ubc" path="res://assets/textures/other/Spiked Ball.png" id="2_q2jmr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fmmtn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q2jmr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrja1"]
+size = Vector2(34, 8)
+
+[node name="Start" type="StaticBody2D"]
+script = ExtResource("1_r2pjd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(11, 6)
+sprite_frames = SubResource("SpriteFrames_fmmtn")
+autoplay = "default"
+frame_progress = 0.500014
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, -4)
+shape = SubResource("RectangleShape2D_lrja1")
+
+[node name="SpawnPosition" type="Marker2D" parent="."]
+position = Vector2(11, -28)
