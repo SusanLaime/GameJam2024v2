@@ -2,7 +2,8 @@ extends Node2D
 
 @export var next_level: PackedScene = null
 @export var is_final_level: bool = false
-
+@export var is_first_level: bool = true
+@export var level_number: int = 1
 @onready var start = $Start
 @onready var exit = $Exit
 @onready var death_zone = $Deathzone
@@ -11,8 +12,9 @@ extends Node2D
 @onready var ui_layer = $UILayer
 
 var newObject = preload("res://scenes/spawn_object.tscn")
-
 var player = null
+var second_player = preload("res://scenes/second_player.tscn")
+var third_player = preload("res://scenes/third_player.tscn")
 var save_position_player
 
 @export var level_time = 5
@@ -21,13 +23,23 @@ var timer_node = null
 var time_left
 
 var win = false
+var player_paths = {
+	1: "res://scenes/player.tscn",
+	2: "res://scenes/second_player.tscn",
+	3: "res://scenes/third_player.tscn"
+}
+
+
+
 
 func _ready():
-	print(level_time)
+	#spawn_player_for_level(level_number)
+	#print(level_time)
 	AudioPlayer.play_sfx("salar")
-	player = get_tree().get_first_node_in_group("player") 
-	if player!=null:
-		player.global_position = start.get_spawn_pos()
+
+	player = get_tree().get_first_node_in_group("player")
+	#if player!=null:
+	#	player.global_position = start.get_spawn_pos()
 	var traps = get_tree().get_nodes_in_group("traps")
 	for trap in traps:
 		#trap.connect("touched_player", _on_trap_touched_player)
@@ -60,6 +72,15 @@ func _on_level_timer_timeout():
 			time_left = level_time
 			hud.set_time_label(time_left)
 			leave_new_object()
+			
+func spawn_player_for_level(level):
+	if player_paths.has(level):
+		var player_scene = load(player_paths[level])
+		var player = player_scene.instance()
+		add_child(player)
+		player.position = Vector2(100, 100) # Set initial position
+	else:
+		print("No player character found for level ", level)
 
 func _process(delta):
 	if Input.is_action_just_pressed("quit"):
