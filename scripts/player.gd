@@ -36,7 +36,8 @@ func _physics_process(delta):
 
 func jump(force):
 	AudioPlayer.play_sfx("jump")
-	velocity.y = -force
+	if is_on_floor() == true:
+		velocity.y = -force
 
 func update_animations(direction, animated_sprite):
 	if is_on_floor():

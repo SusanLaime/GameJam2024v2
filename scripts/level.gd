@@ -83,9 +83,16 @@ func spawn_player_for_level(level):
 		print("No player character found for level ", level)
 
 func _process(delta):
+	save_position_player = player.position
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
+	elif Input.is_action_just_pressed("force_loop"):
+		time_left = level_time
+		leave_new_object()
+		reset_player()
+		
 	elif Input.is_action_just_pressed("reset"):
+		
 		get_tree().reload_current_scene()
 
 func _on_deathzone_body_entered(body):
