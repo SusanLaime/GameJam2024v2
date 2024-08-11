@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwg48jufnb0kf"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_r2pjd"]
-[ext_resource type="Texture2D" uid="uid://c8d4w3s2bqikg" path="res://assets/textures/player/stone_paris.jpeg" id="2_ke6h4"]
+[ext_resource type="Texture2D" uid="uid://cerv1u0e6sre7" path="res://Imagenes/piedra.png" id="2_wn6yn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fmmtn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ke6h4")
+"texture": ExtResource("2_wn6yn")
 }],
 "loop": true,
 "name": &"default",
@@ -21,14 +21,14 @@ size = Vector2(13, 20)
 script = ExtResource("1_r2pjd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -4)
-scale = Vector2(0.004, 0.005)
+position = Vector2(0, -10)
+scale = Vector2(0.124339, 0.185972)
 sprite_frames = SubResource("SpriteFrames_fmmtn")
 autoplay = "default"
 frame_progress = 0.500014
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -4)
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_lrja1")
 
 [node name="SpawnPosition" type="Marker2D" parent="."]

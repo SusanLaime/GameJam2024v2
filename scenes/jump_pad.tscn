@@ -77,7 +77,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5o8ts"]
-size = Vector2(20, 2)
+size = Vector2(17.5099, 0.789201)
 
 [node name="JumpPad" type="Area2D"]
 collision_mask = 2
@@ -92,7 +92,8 @@ frame = 7
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11)
+position = Vector2(-1, -5)
+scale = Vector2(1.15017, -11.4518)
 shape = SubResource("RectangleShape2D_5o8ts")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

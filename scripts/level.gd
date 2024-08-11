@@ -35,7 +35,7 @@ var player_paths = {
 func _ready():
 	#spawn_player_for_level(level_number)
 	#print(level_time)
-	AudioPlayer.play_sfx("salar")
+	AudioPlayer.play_sfx("level_one")
 
 	player = get_tree().get_first_node_in_group("player")
 	#if player!=null:
@@ -115,6 +115,8 @@ func _on_exit_body_entered(body):
 			win = true
 			await get_tree().create_timer(1.5).timeout
 			if is_final_level:
+				AudioPlayer.stop_sfx()
+				AudioPlayer.play_sfx("final")
 				ui_layer.show_win_screen(true)
 			else:
 				get_tree().change_scene_to_packed(next_level)
@@ -124,3 +126,4 @@ func leave_new_object():
 	if player:
 		object.position = save_position_player
 		add_child(object)
+	AudioPlayer.play_sfx("petrified")

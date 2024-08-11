@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_bd87r"]
 [ext_resource type="Texture2D" uid="uid://bhpcfj7pingqk" path="res://assets/textures/Hitler/pixil-frame-0 (11).png" id="3_3ucpu"]
-[ext_resource type="Texture2D" uid="uid://cud2aodpx1mpc" path="res://assets/textures/Paris/paris de frente  (Copy).png" id="3_ont8n"]
+[ext_resource type="Texture2D" uid="uid://c2wvtepqhj8to" path="res://assets/paris frente compu.png" id="3_6k403"]
 [ext_resource type="Texture2D" uid="uid://06r28a8e3p3l" path="res://assets/textures/player/paris.png" id="3_xo5di"]
 [ext_resource type="Texture2D" uid="uid://c61732j2jj0lu" path="res://assets/textures/Paris/paris paso 2.png" id="4_4psg3"]
 [ext_resource type="Texture2D" uid="uid://5idw4xlb7gga" path="res://assets/textures/Civil/civil parado.png" id="4_7xwrb"]
@@ -26,7 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_ont8n")
+"texture": ExtResource("3_6k403")
 }],
 "loop": false,
 "name": &"idle",
@@ -146,10 +146,10 @@ collision_mask = 13
 script = ExtResource("1_bd87r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2, -9)
-scale = Vector2(0.00157046, 0.00265449)
+position = Vector2(0, -9)
+scale = Vector2(0.00290903, 0.00247191)
 sprite_frames = SubResource("SpriteFrames_vwmer")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -162,7 +162,7 @@ limit_bottom = 255
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(2, -6)
 scale = Vector2(0.496823, 0.381103)
 sprite_frames = SubResource("SpriteFrames_7fas2")
 animation = &"fall"
