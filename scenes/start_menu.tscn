@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b0w8gtjt3kke6" path="res://scenes/bg.tscn" id="1_2praq"]
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_5qotc"]
-[ext_resource type="Texture2D" uid="uid://dag3jhqrjv0bt" path="res://assets/textures/newBg/Untitled design.png" id="3_ic8lb"]
 [ext_resource type="FontFile" uid="uid://cx1m2pgcbcdye" path="res://assets/fonts/Kenney Pixel Square.ttf" id="3_mwvnb"]
+[ext_resource type="Texture2D" uid="uid://dflld5dv7xkkf" path="res://Imagenes/menu.png" id="3_r8gi0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rlico"]
 font = ExtResource("3_mwvnb")
@@ -23,7 +23,8 @@ grow_vertical = 2
 script = ExtResource("1_5qotc")
 
 [node name="BG" parent="." instance=ExtResource("1_2praq")]
-bg_texture = ExtResource("3_ic8lb")
+visible = false
+bg_texture = ExtResource("3_r8gi0")
 
 [node name="Yiaaaa" type="Sprite2D" parent="."]
 position = Vector2(411, 175)
@@ -80,6 +81,14 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_mwvnb")
 theme_override_font_sizes/font_size = 10
 text = "SALIR"
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+z_index = -1
+position = Vector2(237, 139)
+scale = Vector2(0.254163, 0.265639)
+texture = ExtResource("3_r8gi0")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

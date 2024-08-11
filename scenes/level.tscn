@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://1sfpdcin4md7" path="res://scenes/ui_layer.tscn" id="4_mr3mu"]
 [ext_resource type="PackedScene" uid="uid://b7mqov562l5sb" path="res://scenes/tile_map.tscn" id="7_wumgc"]
 [ext_resource type="PackedScene" uid="uid://v1fiyp0l185j" path="res://scenes/start.tscn" id="9_ccrjt"]
-[ext_resource type="PackedScene" uid="uid://cn4rpl6hgiarx" path="res://scenes/exit.tscn" id="10_4f6hh"]
 [ext_resource type="Texture2D" uid="uid://b85wuldljj4ar" path="res://assets/TrojanBlock.png" id="11_dwqs0"]
+[ext_resource type="PackedScene" uid="uid://ch2llv7hka3w1" path="res://scenes/exit2.tscn" id="12_c64m6"]
 [ext_resource type="Texture2D" uid="uid://d3weou6tw23wu" path="res://Imagenes/TrojanBlock.png" id="12_rxtdm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ho15a"]
@@ -799,9 +799,6 @@ layer_0/tile_data = PackedInt32Array(1048624, 524288, 2, 983088, 524288, 1, 9175
 [node name="Start" parent="." instance=ExtResource("9_ccrjt")]
 position = Vector2(27, 192)
 
-[node name="Exit" parent="." instance=ExtResource("10_4f6hh")]
-position = Vector2(900, 183)
-
 [node name="Player" parent="." instance=ExtResource("2_he5jd")]
 position = Vector2(40, 166)
 
@@ -824,5 +821,8 @@ offset_bottom = 121.0
 text = "sfddsdffffffsdfsd
 dsfsdfdsffhf
 sdfsdfsd"
+
+[node name="Exit" parent="." instance=ExtResource("12_c64m6")]
+position = Vector2(974, 190)
 
 [editable path="Deathzone"]

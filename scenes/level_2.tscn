@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cw1c5aws8wj4v" path="res://scenes/level_3.tscn" id="2_vj5hk"]
 [ext_resource type="PackedScene" uid="uid://b7mqov562l5sb" path="res://scenes/tile_map.tscn" id="3_aj0rw"]
 [ext_resource type="PackedScene" uid="uid://v1fiyp0l185j" path="res://scenes/start.tscn" id="4_svt18"]
-[ext_resource type="PackedScene" uid="uid://cn4rpl6hgiarx" path="res://scenes/exit.tscn" id="5_2g6oh"]
 [ext_resource type="PackedScene" uid="uid://1sfpdcin4md7" path="res://scenes/ui_layer.tscn" id="5_4vtm7"]
 [ext_resource type="Texture2D" uid="uid://c53golih7as4y" path="res://Imagenes/2 guerra.jpg" id="5_g05ub"]
 [ext_resource type="PackedScene" uid="uid://mwtkxlw36bis" path="res://scenes/deathzone.tscn" id="6_tdmbx"]
+[ext_resource type="PackedScene" uid="uid://bjvdckca3kckn" path="res://scenes/exit1.tscn" id="11_eme63"]
 [ext_resource type="PackedScene" uid="uid://bfi3wl3ecmvan" path="res://scenes/jump_pad.tscn" id="11_srtw4"]
 
 [node name="Level_2" type="Node2D"]
@@ -32,20 +32,14 @@ layer_0/tile_data = PackedInt32Array(1114141, 458752, 10, 1048605, 458752, 9, 98
 [node name="Start" parent="." instance=ExtResource("4_svt18")]
 position = Vector2(22, 208)
 
-[node name="Exit" parent="." instance=ExtResource("5_2g6oh")]
-position = Vector2(972, 215)
-
 [node name="Deathzone" parent="." instance=ExtResource("6_tdmbx")]
 position = Vector2(964, 359)
+scale = Vector2(1.30452, -8.57105)
 
 [node name="Player" parent="." instance=ExtResource("1_tmkdw")]
 position = Vector2(33, 163)
 
 [node name="Objects" type="Node2D" parent="."]
-
-[node name="JumpPad3" parent="Objects" instance=ExtResource("11_srtw4")]
-position = Vector2(437, 209)
-jump_force = 350
 
 [node name="JumpPad4" parent="Objects" instance=ExtResource("11_srtw4")]
 position = Vector2(1164, 80)
@@ -56,3 +50,6 @@ position = Vector2(1375, 0)
 jump_force = 1000
 
 [node name="Traps" type="Node2D" parent="."]
+
+[node name="Exit" parent="." instance=ExtResource("11_eme63")]
+position = Vector2(1028, 202)
